@@ -9,10 +9,9 @@ terraform {
 provider "azurerm" {
     features {}
 }
-module "my_rg" {
-  source = "git::https://github.com/KPMG-UK/terraform-az-resource-group.git?ref=tf0.14-1.0.0"
-
-  name        = "new-my-rg"
-  location    = "UK South"
-  environment = "PROD"
+resource "azurerm_resource_group" "example" {
+  name     = "example-resources"
+  location = "West Europe"
 }
+
+
